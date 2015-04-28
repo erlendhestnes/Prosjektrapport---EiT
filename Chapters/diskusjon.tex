@@ -1,0 +1,26 @@
+% Chapter 7
+
+\chapter{Diskusjon} % Chapter title
+
+\label{ch:diskusjon} % For referencing the chapter elsewhere, use \autoref{ch:mathtest}
+
+% Formålet med dette kapittelet er å diskutere resultatene, først og fremst mot teori og implementasjon.
+%----------------------------------------------------------------------------------------
+
+Som tidligere nevnt, så er resultatet av dette prosjektet i hovedsak et konsept, og ikke et ferdig produkt. Det har derimot blitt implementert en rekke programvaremoduler som ville ha vært nyttige for en eventuell realisering av et slikt konsept. Denne diskusjonsdelen vil derfor ta for seg funksjonaliteten til hver og en av disse modulene.
+
+\section{Moduler}
+\subsection{Posisjonering}
+
+Posisjonering ble i dette prosjektet gjort ved hjelp av et Motion Capture system. Dette er en løsning som ville ha vært fullstendig urealistisk for en butikk å ta i bruk, da spesielt med tanke på pris. Ideelt sett så burde posisjonering av robot og menneske vært gjort ved å bruke en teknologitype som var mer tilgjengelig, slik som Bluetooth. Problemet med å bruke Bluetooth i dette prosjektet var i hovedsak knyttet opp i mot system som har tilgang på fasedata. 
+
+\subsection{Stifinning}
+
+I dette prosjektet ble stifinning implementert ved å bruke en ferdig modul fra programvare-rammeverket ROS. Den opprinnelige tanken var å implementere et liknende system selv, med oppbygning av et kostnadskart, og graf-traversering av dette ved hjelp av en algoritme som f.eks A*. Det viste seg å være vel så effektivt, og meget tidsbesparende, å benytte et ferdig softwareprodukt som gjorde akkurat dette.
+
+\subsection{Kollisjonsdeteksjon}
+
+Både laser-mapping og sonar ble tatt i bruk for å kunne kartlegge omgivelsene til roboten. Sonaren viste seg å være unøyaktig, og ble kun brukt til å vite om roboten var i nærheten av et hinder eller ikke. Laser-mappingen viste å være mye mer presis, og kunne brukes til å detektere langt mindre hindringer enn sonar kunne alene. Sammen utgjorde disse en effektiv løsning, slik at kollisjoner kunne unngås med tilfredsstillende grad av pålitelighet. De fysiske bryterene på robotens støtfanger fungerte som en siste utvei i tilfelle kollisjon, og hindret skade der navigasjonssystemet kom til kort.
+
+\subsection{Sikkerhet}
+Det ble liten tid til å begynne med sikkerhetstiltak. Dette er situasjoner utenom de øvrige kravene som gjør at roboten vil få problemer under kjøring. Vi ønsket å kunne oppdage om sensorer var defekte før eller under kjøring slik at den ville ha tiltak som gjorde den sikker i butikken. Muligheter ville vært å sende forespørsler ut til alle sensorer hvor de måtte gi gode verdier tilbake som tilsier noe om tilstanden. Hvis noe var feil ville roboten si ifra til kunde og komme seg tilbake til lagerområdet og sende beskjeder til ansatte over mobilapplikasjonen. Hvis kjøringsmotorikken var ødelagt ville den stoppet og sendt beskjeder til ansatte.

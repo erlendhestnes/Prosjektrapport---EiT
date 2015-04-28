@@ -1,0 +1,51 @@
+% Løsning
+
+\chapter{Løsning} % Chapter title
+
+\label{ch:losning} % For referencing the chapter elsewhere, use \autoref{ch:mathtest}
+
+%Formålet med dette kapittelet er å presentere ideen, kravene og målene gruppen satte seg. 
+%----------------------------------------------------------------------------------------
+
+\section{Vår idé}
+\subsection{Autonom handlevogn}
+Vår idé for det endelige produktet omfatter en autonom handlevogn robot som benytter et eksternt system for posisjonering og en mobilapplikasjon for å interagere med vognen. Tanken er at brukeren skal slippe å dytte rundt på handlevognen selv når han eller hun er ute på butikken. Dette er et system som kan være spesielt nyttig i butikker som selger tunge og store gjenstander som f.eks. møbelforhandlere, byggevarehus, husholdningselektronikk osv. 
+
+En kan se for seg et scenario hvor en bare trenger å gå inn i en butikk, ta frem mobiltelefon, åpne en applikasjon for å så koble seg til en handlevogn. Handlevognen vil finne veien til brukeren og følge etter brukeren samtidig som den sørger for å håndtere hinder uten å miste brukeren. Når brukeren er ferdig med handlevognen vil man koble seg fra roboten og den kjører tilbake til ladestasjonen igjen.
+
+\subsection{Mobilapplikasjon}
+For å kunne kommunisere med roboten ønskes det å fremme en idé om å lage en mobilapplikasjon. Dette skal være et intuitivt grensesnitt mellom kunder og roboten. Denne applikasjonen vil være brukervennlig, samtidig som den vil ha avanserte funksjoner som gjør det mest mulig å bruke systemet på en praktisk måte.
+
+Applikasjonen vil ha et brukervindu hvor en kunde har muligheten til å koble seg til og fra en vogn, samt pause systemet, noe som vil være nyttig om f.eks kunden må ut i bilen å hente noe underveis i handleturen. I applikasjonen vil man også kunne se hvor vognen befinner seg på et butikkart. I dette vinduet vil det være en meldingsboks hvor det vil dukke opp statusmeldinger fra roboten. Applikasjonen vil vibrere og sende meldingslyder når det kommer inn nye statusmeldinger fra roboten. Dette er en sikker måte å forhindre at kunden ikke går glipp av noe som skjer med vognen. 
+
+Et ansattvindu vil også være tilgjengelig. Her vil det blant annet være funksjoner for å se alle vognene på et butikkart. Funksjoner som manuell overstyring av en vogn og nødstopp er også å finne. Manuell overstyring vil være nødvendig hvis noe skjer og ansatte har bruk for å styre vognen selv. Nødstopp vil enten stoppe en spesifikk vogn eller alle vogner i butikken.
+
+%Bluetooth posisjonering kan i hovedsak realiseres på to forskjellige måter. Det første måten benytter triangulering basert på signalstyrke, mens den andre tar for seg triangulering basert på faseforskyvning. Førstnevnte er enkel å implementere, men lider av å være upresis. Dette gjelder spesielt for bygg med tykke murvegger og mange støykilder. Den andre metoden er mye mer presis, men er vanskelig å implementere og foreløpig lite tilgjengelig.
+
+\section{Funksjonelle krav}
+Det skal utvikles en robot som følger etter en bruker, eksempelvis etter et menneske i et butikkmiljø. Kravene som er satt til prosjektet er oppførselen til roboten, interaksjoner med roboten og ikke-funksjonelle krav som brukervennlighet og tidsrammer. 
+
+\subsection{Styring og følging}
+Roboten skal kunne bli styrt til å følge en person eller komme seg til et mål. Dette må være styrt av et avansert datasystem som bruker et kart som har plottet koordinater eller kalkulerer avstand og retning basert på radiosignaler. Avstand mellom person og robot må være minimum 5 meter. Hvis bruker beveger seg raskere enn roboten vil den øke hastigheten eller gi beskjed til applikasjon om at den er utenfor komfortabel avstand. Hvis roboten merker at bruker kommer i mot roboten vil den stoppe og vente uten at den prøver å følge.
+
+\subsection{Kollisjondeteksjon}
+Roboten skal kunne hindre å kollidere med solide objekter som vegger, hyller, paller, mennesker, vogner, husdyr osv. Hvis roboten blir hindret for lenge må dette håndteres ved at roboten finner en vei rundt hinderet og fortsetter å følge målet. Roboten må ikke bli hindret av kjente hinder den vet den kan kjøre over, dette gjelder ledninger og lignende gjenstander.
+
+\subsection{Sikkerhet}
+Roboten må være sikker slik at den ikke ødelegger for seg selv eller andre. Gode algoritmer og utstyr for kollisjon er nødvendig. Sensorer kan bli defekte under kjøring, det må finnes gode håndteringer for oppførselen til roboten hvis dette skjer. Robotens hastighet kan variere, men må være nøye planlagt så den ikke skader seg selv eller andre. Roboten må ha utstyrt en nødstopp som kan brukes av hvem som helst.
+
+\section{Ikke-funksjonelle krav}
+
+\subsection{Brukervennlighet}
+Applikasjonen mellom kunde og robot må være lett å bruke slik at det ikke er behov for opplæring og at det blir minst mulig feilbetjening. Systemet som styrer robot må gjerne være automatisk, men hvis feil oppstår må det være enkelt i bruk for å finne feilmeldinger.
+
+\subsection{Krav til tid}
+Eksperter i Team har en tidsplan hvor grupper får bruke hver onsdag på å jobbe sammen, en prototype av systemet skal være levert på disse 14 ukene, altså 14 dager.
+
+\section{Prosjektmål}
+\begin{itemize}
+\item Å realisere egenutvikling hos medlemmer i gruppen i form av økt kompetanse i samarbeid, kommunikasjon og gruppedynamikk.
+\item Å kunne bruke de respektive fagfeltene til hvert gruppemedlem til å få et best mulig produkt.
+\item Å kunne lære seg mer om roboter og hvordan de virker eller burde virke blant mennesker.
+\end{itemize}
+
